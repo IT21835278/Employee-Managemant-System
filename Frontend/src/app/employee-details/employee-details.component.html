@@ -1,0 +1,34 @@
+<h3 class="text-center">Employee details</h3>
+<div class="col-md-8 offset-md-2">
+    <div class="card mt-3">
+        <div class="card-body">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label"><b>ID:</b></label>
+                <div class="col-sm-9">
+                    <label class="p-1">{{employee.id}}</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label"><b>Name:</b></label>
+                <div class="col-sm-9">
+                    <label class="p-1">{{employee.name}}</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label"><b>Address:</b></label>
+                <div class="col-sm-9">
+                    <label class="p-1">{{employee.address}}</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label"><b>Email:</b></label>
+                <div class="col-sm-9">
+                    <label class="p-1">{{employee.emailId}}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-3">
+        <button class="btn btn-danger" (click)="goToEmployeeList()">Back</button>
+    </div>
+</div>

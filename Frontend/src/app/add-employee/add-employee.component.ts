@@ -2,6 +2,7 @@ import { EmployeeService } from './../employee.service';
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../employee';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-employee',
@@ -22,6 +23,12 @@ export class AddEmployeeComponent implements OnInit{
   saveEmployee(){
     this.empService.createEmployee(this.employee).subscribe( data =>{
       console.log(data);
+      Swal.fire({
+        icon: 'success',
+        title: 'Employee Added Successfully!',
+        showConfirmButton: false,
+        timer: 1500
+      });
       this.goToEmployeeList();
       
     },

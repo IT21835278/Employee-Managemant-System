@@ -15,7 +15,9 @@
             <td>{{employee.address}}</td>
             <td>{{employee.emailId}}</td>
             <td>
-                <button (click)="updateEmployee(employee.id)" class="btn btn-info">Update</button>
+                <button (click)="updateEmployee(employee.id)" class="btn btn-success  m-3">Update</button>
+                <button (click)="deleteEmployee(employee.id)" class="btn btn-danger ">Delete</button>
+                <button (click)="viewEmployee(employee.id)" class ="btn btn-info m-3">Details</button>
             </td>
         </tr>
     </tbody>

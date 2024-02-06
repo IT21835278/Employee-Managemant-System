@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../employee.service';
 import { Employee } from '../employee';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-update-employee',
@@ -24,6 +26,12 @@ export class UpdateEmployeeComponent implements OnInit {
   }
 
   goToEmployeeList(){
+    Swal.fire({
+      icon: 'success',
+      title: 'Employee Update Successfully!',
+      showConfirmButton: false,
+      timer: 1500
+    });
     this.router.navigate(['/employees']);
 
   }

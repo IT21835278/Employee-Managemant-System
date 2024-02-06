@@ -1,9 +1,12 @@
 package com.example.demo.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -54,6 +57,19 @@ public class EmployeeController {
 		Employee updateEmp = empRepositorty.save(emp);
 		
 		return ResponseEntity.ok(updateEmp);
+	}
+	
+	//delete employee API
+	@DeleteMapping("/employee/{id}")
+	public ResponseEntity< Map<String,Boolean>> deleteEmployee(@PathVariable Long id){
+		Employee emp = empRepositorty.findById(id).orElseThrow(()-> new ResourceNotFoundException("Cant delete the employe not exist"));
+		empRepositorty.delete(emp);
+		
+		Map<String,Boolean> response  = new HashMap<>();
+		response.put("deleted", Boolean.TRUE);
+		
+		return ResponseEntity.ok(response);
+		
 	}
 
 }

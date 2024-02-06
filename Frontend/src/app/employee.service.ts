@@ -29,4 +29,8 @@ export class EmployeeService {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.httpClient.put<Employee>(`${this.baseURL}/${id}`, emp, { headers });
   }
+
+  deleteEmployee(id:number):Observable<object>{
+    return this.httpClient.delete(`${this.baseURL}/${id}`);
+  }
 }
